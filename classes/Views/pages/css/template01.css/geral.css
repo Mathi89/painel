@@ -1,0 +1,60 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+  }  
+
+  :root {
+    --main-color-datails: #3b6fdf;
+    --main-color-transparent: #105bcc26;
+    --main-color-dark: #0a4e8d;
+    --clr: #333;
+    --branco-roxo: #E9E7F4;
+    --green-preco: #54cb5d;
+    --blue-color: #0679cb;
+    --color-modest: #1b99e2;
+    --red:#df5050;
+    --yellow: #f5b423;
+    --green: #54cb5d;
+  }
+  
+
+  .box-alert2 {
+    background: white;
+    padding: 5px;
+    border-radius: 5px;
+    font-weight: bold;
+    width: max-content;
+    margin: 10px;
+    top: 30px;
+    transform: translateX(-50%);
+    left: 50%;
+    position: fixed;
+    z-index: 999;
+}
+.sucesso {
+    border: 4px solid #58fb8c;
+    border-left: 30px solid #58fb8c;
+    
+}
+.atencao {
+    border: 4px solid #fbd958;
+    border-left: 30px solid #fbd958;
+
+}
+.error {
+    border: 4px solid #fb5858;
+    border-left: 30px solid #fb5858;
+    
+}
+.corpo_erro404 {
+}
+
+img.img_404 {
+    width: 50%;
+}
+
+.group_erro404 {
+    text-align: center;
+}
