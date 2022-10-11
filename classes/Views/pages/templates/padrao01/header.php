@@ -18,6 +18,8 @@ if(isset($_GET['loggout'])){
 
         <!--========== BOX ICONS ==========-->
        
+        <!-- CSS only -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
         <script src="https://code.jquery.com/jquery-1.9.1.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -65,6 +67,8 @@ if(isset($_GET['loggout'])){
     </div> -->
 
 </div>
+
+
         <!--========== SECTION ==========-->
         <section id="" class="section-painel">
             <!--========== HEADER ==========-->
@@ -141,10 +145,13 @@ if(isset($_GET['loggout'])){
                             <li class="li_menu_painel"> <a href="<?= INCLUDE_PATH ?>" class="<?php selecionadoMenu('') ?> links-menu"><i class='icon-menu bx bxs-dashboard'></i> Dashboard</a> </li>
                             <li class="li_menu_painel">  <a <?php verificaPermissaoMenu(0)?> href="<?= INCLUDE_PATH?>clients" class="<?php selecionadoMenu('clients') ?> links-menu"><i class='icon-menu bx bx-user'></i> Clientes</a> <li>
                             <!-- <li class="li_menu_painel"> <a href="<?= INCLUDE_PATH?>financeiro" <?php verificaPermissaoMenu(1)?> class="<?php selecionadoMenu('financeiro') ?> links-menu"><i class='icon-menu bx bx-money-withdraw'></i> Financeiro</a> </li> -->
-                            <li class="li_menu_painel"> <a href="<?= INCLUDE_PATH?>produtos" class="<?php selecionadoMenu('agendamentos') ?> links-menu"><i class='icon-menu bx bxs-shopping-bags'></i> Produtos</a> </li>
-                            <li class="li_menu_painel"> <a href="<?= INCLUDE_PATH?>prospeccao" class="<?php selecionadoMenu('prospeccao') ?> links-menu"> <i class='icon-menu bx bxs-megaphone'></i> Prospecção</a> </li>
-                            <li class="li_menu_painel"> <a href="<?= INCLUDE_PATH?>bot" class="<?php selecionadoMenu('email_pronto') ?> links-menu"><i class='icon-menu bx bxs-bot'></i> Conectar Bot</a> <li>
-                            
+                            <li class="li_menu_painel"> <a href="<?= INCLUDE_PATH?>produtos" class="<?php selecionadoMenu('produtos') ?> links-menu"><i class='icon-menu bx bxs-shopping-bags'></i> Produtos</a> </li>
+                            <li class="li_menu_painel"> <a href="<?= INCLUDE_PATH?>categorias" class="<?php selecionadoMenu('categorias') ?> links-menu"> <i class='icon-menu bx bxs-category-alt'></i> Categorias</a> </li>
+                            <li class="li_menu_painel"> <a href="<?= INCLUDE_PATH?>bot" class="<?php selecionadoMenu('bot') ?> links-menu"><i class='icon-menu bx bxs-bot'></i> Conectar Bot</a> <li>
+                            <li class="li_menu_painel"> <a href="<?= INCLUDE_PATH?>credentials" class="<?php selecionadoMenu('credentials') ?> links-menu"><i class='icon-menu bx bx-money-withdraw'></i> Pagamentos</a> <li>
+                            <li class="li_menu_painel"> <a href="<?= INCLUDE_PATH?>respostas" class="<?php selecionadoMenu('credentials') ?> links-menu"><i class='icon-menu bx bxs-conversation'></i> Respostas</a> <li>
+                            <li class="li_menu_painel"> <a href="<?= INCLUDE_PATH?>settingsbasic" class="<?php selecionadoMenu('credentials') ?> links-menu"><i class='icon-menu bx bxs-cog'></i> Configuração</a> <li>
+
                         </ul>
 
                         

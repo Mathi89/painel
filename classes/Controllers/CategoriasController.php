@@ -12,18 +12,21 @@ class CategoriasController extends Controller
 
 			/*DASHBOARD IMOBILIARIA*/
 
-				$infos = \Models\HomeModel::pagesDestaques();
+				$list = \Models\CategoriasModel::getListCategory();
 				$this->view = new \Views\MainView('categorias');
-				$this->view->render(array($infos));
+				$this->view->render(array($list));
 				echo '
 				<link rel="stylesheet" href="'.INCLUDE_CSS_T01.'categorias.css">
 				<script src="'.INCLUDE_PATH_FULL.'javascript/categorias.js"></script>';	
 			
 		});
 
-		// \Router::rota('produtos/boas_vindas', function () {
-		// 	\Models\HomeModel::boas_vindas();
-		// });
+		\Router::rota('categorias/editstatus', function () {
+			\Models\CategoriasModel::editstatus();
+		});
+		\Router::rota('categorias/deletecategoria', function () {
+			\Models\CategoriasModel::deletecategoria();
+		});
 
 		
 	}

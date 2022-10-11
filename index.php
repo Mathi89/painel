@@ -2,7 +2,6 @@
 include('classes/config.php'); 
 require 'vendor/autoload.php';
 
-
 $autoload = function ($class) {
 	$class = str_replace('\\','/',$class);
 	

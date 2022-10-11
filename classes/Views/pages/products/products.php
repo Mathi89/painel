@@ -23,8 +23,10 @@
             </div>
 
 
+<?php 
+if($arr[0]['type'] == "recarga"){ ?>
 
-            <div class="variacoes-product-page">
+<div class="variacoes-product-page">
 
             <div class="group-variable-product">
                 <label class="title-variacao">Cor</label>
@@ -36,8 +38,12 @@
                     <option value="Amarelo">Amarelo</option>
                </select>
             </div>
+            </div>
 
-            <div class="group-variable-product">
+<?php } ?>
+            
+
+            <!-- <div class="group-variable-product">
                <label class="title-variacao">Tamanho da blusa</label>
                <select name="color">
                     <option disabled selected value >Selecione um tamanho</option>
@@ -68,8 +74,8 @@
                     <option value="40">40</option>
                     <option value="42">42</option>
                </select>
-            </div>
-        </div>
+            </div> -->
+        
 
 
         <div class="space-values-product-page">

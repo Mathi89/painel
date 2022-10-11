@@ -25,7 +25,7 @@ class Application
 		// 			die();
 		// 		}; 
 
-		if(Painel::logado() == true && @explode('/',$_GET['url'])[0] != 'settings' || $_GET['url'] == 'logar' ||  $_GET['url'] == 'reference_email' || $_GET['url'] == 'pass' || $_GET['url'] == 'recuperar' || $_GET['url'] == 'email' AND explode('/',$_GET['url'])[0] != 'viewimg'){
+		if(Painel::logado() == true && @explode('/',$_GET['url'])[0] != 'settings' || @explode('/',$_GET['url'])[0] == 'logar' ||  @explode('/',$_GET['url'])[0] == 'reference_email' || @explode('/',$_GET['url'])[0] == 'pass' || @explode('/',$_GET['url'])[0] == 'email' AND @explode('/',$_GET['url'])[0] != 'viewimg'){
 			$url = isset($_GET['url']) ? explode('/',$_GET['url'])[0] : 'Home';
 			$url = ucfirst($url);
 			$url.="Controller";

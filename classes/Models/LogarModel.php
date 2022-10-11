@@ -12,32 +12,38 @@ class LogarModel
 
         if (isset($_POST['acaoLo'])) {
 
-            $table2 = 'tb_admin_users';
+            $table = 'tb_admin_users';
             $query = ' email = ? AND pass = ?';
             $email = $_POST['user'];
             $pass = $_POST['password'];
-            if ($sql = \Painel::logar($table2, $query, $email, $pass)) {
+            $sql = \Painel::logar($table, $query, $email, $pass);
+
+            if($sql != ['error']){
 
 
                 @$_SESSION['login'] = true;
                 @$_SESSION['email'] = $email;
-                @$_SESSION['password'] = $pass;
+                // @$_SESSION['password'] = $pass;
                 @$_SESSION['cargo'] = $sql['cargo'];
                 @$_SESSION['nome'] = $sql['nome'];
                 @$_SESSION['telefone'] = $sql['telefone'];
                 @$_SESSION['primeiro_login'] = true;
                 @$_SESSION['user_id'] = $sql['id'];
-                @$_SESSION['id_empresa'] = $sql['id_empresa'];
+                // @$_SESSION['id_empresa'] = $sql['id_empresa'];
                 if (isset($sql['logo'])) {
                     @$_SESSION['logo'] = $sql['logo'];
                 };
                 \Painel::redirect(INCLUDE_PATH);
-
+                
+            
                 
             } else {
                 //Falhou
                 \Painel::alertfixed('error', 'Usuário ou senha incorretos');
             }
+        } else {
+            //Falhou
+            \Painel::alertfixed('error', 'Houve algum erro. Tente novamente mais tarde.');
         }
     }
 

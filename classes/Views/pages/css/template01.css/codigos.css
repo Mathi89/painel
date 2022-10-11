@@ -1,0 +1,95 @@
+section.section-codigos {
+    width: 100%;
+    padding: 20px 0;
+}
+
+.body-codigos {width: 100%;}
+
+form.form-codigos {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+.base-create {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.card-dash {
+    background: white;
+    width: 205px;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 104px;
+    box-shadow: 0px 0px 6px #00000036;
+}
+
+.cards-space {
+    width: 100%;
+    display: flex;
+    column-gap: 10px;
+    justify-content: center;
+    padding: 10px 0;
+    padding-bottom: 40px;
+}
+
+span.title-card {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--clr);
+}
+
+span.number-card {
+    font-weight: 700;
+    font-size: 27px;
+}
+
+textarea.texto-codigos {
+    height: 300px;
+    resize: vertical;
+    max-height: 450px;
+    min-height: 250px;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+}
+
+.space-for-selects-options {
+    display: flex;
+    column-gap: 10px;
+}
+
+
+@media only screen and (max-width: 535px) {
+    .base-create {
+        width: 100%;
+        margin: 0 auto;
+    }
+    .space-for-selects-options {
+        display: flex;
+        column-gap: 10px;
+        flex-direction: column;
+        row-gap: 10px;
+    }
+
+    .cards-space {
+        width: 100%;
+        display: flex;
+        column-gap: 10px;
+        justify-content: center;
+        padding: 10px 0;
+        row-gap: 10px;
+        padding-bottom: 40px;
+        flex-direction: column;
+    }
+
+    .card-dash {
+        background: white;
+        width: 100%;
+    }
+}

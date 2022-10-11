@@ -58,9 +58,113 @@ class HomeModel
             return $dados;
     }
 
-    public static function productsDestaques()
+    public static function getInfoToday()
     {
+
+        $table = 'tb_admin.pedidos';
+        $hoje = date("Y/m/d");
+  
+        $conttoday = MySql::conectar()->prepare("SELECT COUNT(x.reference_id) qtd FROM (SELECT reference_id FROM `$table` WHERE DATE_FORMAT(data_hora,'%Y/%m/%d') = ? GROUP BY reference_id) x");
+        $conttoday->execute(array($hoje));
+        $rescont = $conttoday->fetch();
+        if(!empty($rescont['qtd'])){
+            $rescont = $rescont['qtd'];
+        }else{
+            $rescont = 0;
+        }
+
+
+        $sumtoday = MySql::conectar()->prepare("SELECT SUM(y.total_compra) total FROM (SELECT total_compra FROM `$table` WHERE DATE_FORMAT(data_hora,'%Y/%m/%d') = ? GROUP BY reference_id) y");
+        $sumtoday->execute(array($hoje));
+        $ressum = $sumtoday->fetch();
+
+        if(!empty($ressum['total'])){
+            $ressum = $ressum['total'];
+        }else{
+            $ressum = 0;
+        }
+        $ressum = floatval($ressum);
+        $ressum = \Painel::convertMoney($ressum);
+
+        return array($rescont,$ressum);
+
         
+    }
+
+    public static function getInfoMes()
+    {
+
+        $table = 'tb_admin.pedidos';
+        $hoje = date("m");
+  
+        $conttoday = MySql::conectar()->prepare("SELECT COUNT(x.reference_id) qtd FROM (SELECT reference_id FROM `$table` WHERE DATE_FORMAT(data_hora,'%m') = ? GROUP BY reference_id) x");
+        $conttoday->execute(array($hoje));
+        $rescont = $conttoday->fetch();
+        if(!empty($rescont['qtd'])){
+            $rescont = $rescont['qtd'];
+        }else{
+            $rescont = 0;
+        }
+
+
+        $sumtoday = MySql::conectar()->prepare("SELECT SUM(x.total_compra) total FROM (SELECT total_compra FROM `$table` WHERE DATE_FORMAT(data_hora,'%m') = ? GROUP BY reference_id) x");
+        $sumtoday->execute(array($hoje));
+        $ressum = $sumtoday->fetch();
+
+        if(!empty($ressum['total'])){
+            $ressum = $ressum['total'];
+        }else{
+            $ressum = 0;
+        }
+        $ressum = floatval($ressum);
+        $ressum = \Painel::convertMoney($ressum);
+
+        return array($rescont,$ressum);
+
+        
+    }
+
+    public static function getQtdPlataforma($status = "on")
+    {
+
+        if($status == "all"){
+            $sel = \Painel::selectAllQuery('tb_admin.plataformas_recarga');
+        }else{
+            $sel = \Painel::selectAllQuery('tb_admin.plataformas_recarga','WHERE status = ?', array($status));
+        }
+        
+        return $sel;
+    }
+
+    public static function getQtdEstoque($id_plataforma,$status = "all")
+    {
+     
+        if($status == "all"){
+
+            $sel = \Painel::selectCount('tb_admin.estoque_recarga','id_plataforma = ?',array($id_plataforma),'id');
+            if(!empty($sel['qtd'])){
+                $sel = $sel['qtd'];
+            }else{
+                $sel = 0;
+            }
+
+        }else{
+
+            $sel = \Painel::selectCount('tb_admin.estoque_recarga','id_plataforma = ? AND status = ?',array($id_plataforma,$status),'id');
+            if(!empty($sel['qtd'])){
+                $sel = $sel['qtd'];
+            }else{
+                $sel = 0;
+            }
+        }
+        
+        return $sel;
+    }
+
+    public static function getLastPayments()
+    {
+        $get = \Painel::selectAllQuery('tb_admin.pedidos','WHERE status = ? GROUP BY reference_id ORDER BY id DESC LIMIT 25 ',array("approved"));
+        return $get;
     }
 
 }

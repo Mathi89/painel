@@ -32,12 +32,14 @@ $script = $_SERVER['HTTP_HOST'];
 define('DOMAIN', $script);
 define('INCLUDE_PATH', 'http://localhost/painelplay/');
 define('URL_LOJA', 'http://localhost/lojavirtualplay/');
+define('URL_LOJA_VIEWS', URL_LOJA.'classes/Views/');
 define('INCLUDE_PATH_COLLECTION', INCLUDE_PATH.'collection/');
 define('INCLUDE_PATH_LOGIN', INCLUDE_PATH . 'logar');
 define('INCLUDE_PATH_SETTING', INCLUDE_PATH . 'settings/');
 define('INCLUDE_PATH_FULL', INCLUDE_PATH . 'classes/Views/pages/');
 define('INCLUDE_PATH_VIEWS', INCLUDE_PATH . 'classes/Views/');
 define('BASE_DIR_PAINEL', __DIR__ . '/Views/pages/');
+define('URL_BOT_PAINEL','http://localhost:8000/');
 define('BASE_DIR_IMG', __DIR__ . '/Views');
 define('BASE_DIR_INICIO', __DIR__ );
 define('INCLUDE_CSS_T01', INCLUDE_PATH_FULL.'css/template01.css/');
@@ -78,6 +80,21 @@ function pegaCargo($indice)
 {
 	return Painel::$cargos[$indice];
 }
+
+function getStatus($status)
+{
+	if($status == "on"){
+
+		$res = array("class"=>"status-ativo","name"=>"Ativo");
+
+	}else{
+		$res = array("class"=>"status-desativado","name"=>"Desativado");
+	}
+
+	
+	return $res;
+}
+
 function selecionadoMenu(){}
 function selectMenu($par)
 {

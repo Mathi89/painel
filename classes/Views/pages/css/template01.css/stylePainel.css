@@ -8,13 +8,7 @@
   
 
 
-input, textarea {
-    border: solid 2px #dddddd;
-    height: 35px;
-    padding-left: 10px;
-    outline: none;
-    border-radius: 5px;
-}
+
 .center{
     text-align: center;
 }
@@ -603,7 +597,7 @@ h1.titulo-painel {
 .painel-left,
 .client-right {
     width: 196px;
-    height: auto;
+    height: 45PX;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -3600,6 +3594,8 @@ form {}
 
 }
 
+
+
 @media only screen and (max-width: 535px) {
 
     .content-titulo-painel img {
@@ -3619,6 +3615,10 @@ form {}
     .header-width-normal {
         width: calc(100%);
         padding: 0 10px;
+    }
+    
+    p.notfy {
+        width: 100%;
     }
 
     .header {

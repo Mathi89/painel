@@ -1,0 +1,114 @@
+.base-create form {
+}
+
+.input-file-logo {
+    display: none;
+}
+
+.img-logo {
+    width: 80%;
+    border-radius: 5px;
+    cursor: pointer;
+    height: 160px;
+    object-fit: contain;
+}
+
+.base-form-interno {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    column-gap: 10px;
+    align-items: center;
+    padding: 10px 0;
+    padding-bottom: 25px;
+}
+
+.doouble-space {
+    display: flex;
+    row-gap: 10px;
+    width: 100%;
+    flex-direction: column;
+}
+
+.base-create form input {
+    border-radius: 5px;
+    width: 100%;
+}
+
+.base-create {
+    width: 60%;
+    margin: 0 auto;
+}
+
+section.section-credentials {
+    width: 100%;
+}
+
+.card-pagamento {
+    padding: 15px;
+    background: white;
+    border-radius: 10px;
+    width: 310px;
+    box-shadow: 0px 0px 6px #0000001f;
+}
+
+.body-card-pagamentos {
+    padding: 40px 0;
+}
+
+h4.title-pagamento {
+    font-weight: 700;
+    color: var(--blue-color);
+}
+
+.space-logo {
+    display: flex;
+    justify-content: center;
+}
+
+p.number-credenciais {
+    padding: 0;
+}
+
+p.credenciais {
+    padding: 0;
+    margin: 0;
+}
+
+.status {
+    display: flex;
+    justify-content: right;
+}
+
+
+@media only screen and (max-width: 535px) {
+    .base-form-interno {
+        display: flex;
+        grid-template-columns: repeat(2,1fr);
+        column-gap: 10px;
+        flex-direction: column-reverse;
+        align-items: center;
+        padding: 10px 0;
+        padding-bottom: 25px;
+    }
+
+    .doouble-space {
+        display: flex;
+        row-gap: 10px;
+        width: 100%;
+        flex-direction: column;
+        padding-bottom: 10px;
+    }
+
+    .base-create {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .base-create form input {
+        border-radius: 5px;
+        width: 100%;
+        outline: none;
+        padding-left: 10px;
+        height: 35px;
+    }
+}

@@ -23,6 +23,8 @@ btnPainel2.addEventListener('click', () => {
 })
 
 
+
+
 btnclientRight.addEventListener('click', () => {
     
     menuUsuarioRight.classList.add('open')
@@ -91,6 +93,18 @@ $('body').on('click', '#notify', function () {
     Item.classList.toggle("block");
 })
 
+// FECHANDO MODAL DO BOOTSTRAP
+$('body').on('click', '#closemodal', function () {
+    $("#exampleModal").modal("hide");
+
+// EXEMPLOS DE COMO USAR MODAL BOOTSTRAP NO JQUERY
+// $(".modal-title").html();
+// $(".modal-body").html();
+// $(".modal-footer").html();
+// $("#exampleModal").modal("show");
+// $("#exampleModal").modal("toggle");
+})
+
 
 tinymce.init({
     selector: '#editortexto'
@@ -133,3 +147,25 @@ function alertAtencao(msg,temp = 3200,rl = false){
 }
 
 // FIM DAS FUNÕES PARA USAR GERALMENTE
+
+
+function moneymask(){
+    $('.moneyrs').maskMoney({
+        prefix:'R$ ',
+        allowNegative: true,
+        thousands:'.', decimal:',',
+        affixesStay: true
+    });
+}
+
+function maskTelefone()
+{
+    $('.tel-input').mask('(00) 0000-00009');
+$('.tel-input').blur(function(event) {
+   if($(this).val().length == 15){ // Celular com 9 dígitos + 2 dígitos DDD e 4 da máscara
+      $('.tel-input').mask('(00) 00000-0009');
+   } else {
+      $('.tel-input').mask('(00) 0000-00009');
+   }
+});
+}

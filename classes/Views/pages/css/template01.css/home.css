@@ -1,0 +1,206 @@
+section.section-home-body {
+    width: 100%;
+    padding: 20px 0;
+}
+
+.space-body-kpi-values-grid {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    column-gap: 10px;
+    row-gap: 10px;
+    justify-content: center;
+    width: 100%;
+}
+
+.card-values-kpi {
+    width: 100%;
+    background: white;
+    margin: 0 auto;
+    padding: 22px 10px;
+    display: block;
+    border-radius: 10px;
+    box-shadow: 0px 0px 8px #00000026;
+    text-align: center;
+}
+
+span.title-card-value-kpi {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+span.number-card-value-kpi {
+    font-size: 25px;
+    font-weight: 600;
+}
+
+
+/* .card-dados-gerais.grafico-vendas {
+    width: calc(100% - 5px);
+    background: white;
+    box-shadow: 0px 0px 8px #00000026;
+    padding: 10px;
+    border-radius: 10px;
+} */
+
+/* .card-dados-gerais.estoque-vendas-recarga {
+    height: auto;
+    background: white;
+    box-shadow: 0px 0px 8px #00000026;
+    padding: 10px;
+    border-radius: 10px;
+    width: calc(100% - 5px);
+} */
+
+.body-dados-gerais-content-grid {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    column-gap: 10px;
+    row-gap: 10px;
+    width: calc(100% - 10px);
+}
+
+.recarga-qtd-card {
+    width: 100%;
+    padding: 7px 15px;
+    background: var(--blue-color);
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0px 0px 4px #00000087;
+}
+
+.body-estoque-recarga {
+    height: 245px;
+    display: flex;
+    row-gap: 10px;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+.body-dados-gerais {
+    padding-top: 10px;
+}
+
+h4.title-space {
+    font-size: 15px;
+    font-weight: 600;
+}
+.body-estoque-recarga::-webkit-scrollbar-thumb {
+    background-color: var(--blue-color);
+    border-radius: 10px;
+    border: solid 3px white;
+}
+
+.body-estoque-recarga::-webkit-scrollbar {
+    width: 10px;
+    padding: 0 2px;
+}
+
+
+.folha-dados-dash {
+    background: white;
+    /* width: calc(100% - 5px); */
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 8px #00000026;
+}
+
+.card-ultimas-vendas {
+    width: 100%;
+    background: var(--blue-color);
+    padding: 5px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.body-list-ultimas-vendas {
+    height: 245px;
+    overflow-x: hidden;
+}
+
+
+
+.body-list-ultimas-vendas::-webkit-scrollbar-thumb {
+    background-color: var(--blue-color);
+    border-radius: 10px;
+    border: solid 3px white;
+}
+
+.body-list-ultimas-vendas::-webkit-scrollbar {
+    width: 10px;
+    padding: 0 2px;
+}
+
+.content-list-ultimas-vendas {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+.body-base2-dados {
+    padding-top: 10px;
+}
+
+.space-dados-pagto {
+    width: 247px;
+    margin: 0 auto;
+}
+
+a.btn-link-add-codigos {
+    background: var(--green);
+    padding: 0 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: var(--branco-roxo);
+}
+
+.space-btn-folha {
+    padding: 5px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+.card-dados-gerais.grafico-vendas.folha-dados-dash {
+    display: none;
+}
+
+.card-dados-gerais.grafico-pagto.folha-dados-dash {
+    display: none;
+}
+
+@media only screen and (max-width: 768px) {
+
+    .space-body-kpi-values-grid {
+        display: flex;
+        column-gap: 10px;
+        row-gap: 10px;
+        justify-content: center;
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .body-dados-gerais-content-grid {
+        display: flex;
+        grid-template-columns: 50% 50%;
+        column-gap: 10px;
+        row-gap: 10px;
+        flex-direction: column;
+        width: 100%;
+        
+    }
+
+    .card-dados-gerais.grafico-vendas {
+        width: 100%;
+    }
+
+    .folha-dados-dash {
+        width: 100%;
+    }
+
+}
